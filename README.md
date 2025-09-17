@@ -1,6 +1,6 @@
 # fanatec-pedal-emulator-vrs
 
-This is a modified version of fanatec-pedal-emulator GeekyDeaks to read VRS DirectForce Pro Pedals instead of the HE Sprint pedals.
+This is a modified version of fanatec-pedal-emulator by GeekyDeaks to read VRS DirectForce Pro Pedals instead of the HE Sprint pedals.
 
 Small golang HID to UART proxy
 
