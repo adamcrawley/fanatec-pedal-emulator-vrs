@@ -14,18 +14,18 @@ import (
 	"go.bug.st/serial"
 )
 
-// VID: 30b7, PID: 1001, Serial: SP248E36055FEDC30D, Product: Heusinkveld Sim Pedals Sprint, Interface: 0
+// VID: 0483, PID: A3BE, Product: VRS DirectForce Pro Pedals
 var pedalInfo = hid.DeviceInfo{
-	VendorID:  0x30b7,
-	ProductID: 0x1001,
+	VendorID:  0x0483,
+	ProductID: 0xA3BE,
 }
 
 // HID report from HE pedals
 type HEPedalReport struct {
 	Id       uint8
-	Throttle uint16
-	Brake    uint16
 	Clutch   uint16
+	Brake    uint16
+	Throttle uint16
 }
 
 type Step struct {
@@ -150,10 +150,9 @@ func he_handler(pedals *hid.Device, pp *ProxyPedals) {
 		last_he = he
 
 		pp.mutex.Lock()
-		// convert from HE values to 0 - 65535
-		pp.Throttle = (he.Throttle << 4) + (he.Throttle >> 8)
-		pp.Brake = (he.Brake << 4) + (he.Brake >> 8)
-		pp.Clutch = (he.Clutch << 4) + (he.Clutch >> 8)
+		pp.Throttle = he.Throttle;
+		pp.Brake = he.Brake;
+		pp.Clutch = he.Clutch;
 		pp.mutex.Unlock()
 		log.Printf("HE HID Report: %4d / %4d / %4d, Proxy: %5d / %5d / %5d",
 			he.Throttle, he.Brake, he.Clutch, pp.Throttle, pp.Brake, pp.Clutch)
