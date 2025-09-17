@@ -17,7 +17,9 @@ can be used to interface with the pedal RJ12 port on the wheelbase.
 
     go run proxy.go [COMPORT]
 
-e.g. `go run proxy.go COM3`. Find the name of your COM port in Device Manager
+e.g. `go run proxy.go COM3`. 
+
+Find the name of your COM port in Device Manager
 
 # Fanatec RJ12 pinouts on pedal control board
 
