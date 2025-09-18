@@ -1,11 +1,11 @@
 # fanatec-pedal-emulator-vrs
 
-This is a modified version of fanatec-pedal-emulator by GeekyDeaks to read VRS DirectForce Pro Pedals instead of the HE Sprint pedals.
+This is a modified version of fanatec-pedal-emulator by GeekyDeaks to read VRS DirectForce Pro Pedals instead of the HE Sprint pedals. I am using this with my CS DD+ on PS5, but it should also work on Xbox and with other Fanatec wheelbases.
 
-Small golang HID to UART proxy
+Small golang HID to UART proxy.
 
 Allows a set of USB pedals to be proxied to a Fanatec wheelbase and therefore
-be used on console if the wheelbase supports it
+be used on console if the wheelbase supports it.
 
 # Setup
 
